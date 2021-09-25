@@ -15,19 +15,19 @@ const Layout = ({ children }) => {
   };
   const nav = () => {
     return (
-      <ul className="nav nav-tabs" style={{ backgroundColor: 'violet' }}>
+      <ul className="nav nav-tabs" style={{ backgroundColor: 'orchid' }}>
         <li className="nav-item">
-          <a className="nav-link" style={{ color: 'white' }} href="">
+          <a className="nav-link" style={{ color: '#011000' }} href="">
             Home
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" style={{ color: 'white' }} href="">
+          <a className="nav-link" style={{ color: '#011000' }} href="">
             Login
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" style={{ color: 'white' }} href="">
+          <a className="nav-link" style={{ color: '#011000' }} href="">
             Register
           </a>
         </li>
