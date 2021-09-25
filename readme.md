@@ -28,7 +28,7 @@ _{cunderwoodmn [at] gmail {dot} com}_
 
 ## Technologies Used
 
-_{Next.js}_
+_{Next.js, Bootstrap 4,}_
 
 ### License
 

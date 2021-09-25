@@ -1,22 +1,33 @@
 import React from 'react';
+import Head from 'next/head';
 
 // children = props.children
 const Layout = ({ children }) => {
+  const head = () => {
+    return (
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+      />
+    );
+  };
   const nav = () => {
     return (
-      <ul className="nav">
+      <ul className="nav nav-tabs" style={{ backgroundColor: 'violet' }}>
         <li className="nav-item">
-          <a className="nav-link" href="">
+          <a className="nav-link" style={{ color: 'white' }} href="">
             Home
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="">
+          <a className="nav-link" style={{ color: 'white' }} href="">
             Login
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="">
+          <a className="nav-link" style={{ color: 'white' }} href="">
             Register
           </a>
         </li>
@@ -25,7 +36,17 @@ const Layout = ({ children }) => {
   };
   return (
     <React.Fragment>
-      {nav()} {children}
+      <>
+        <style type="text/css">
+          {`
+   .nav-link {
+       color: "pink";
+   }
+      `}
+        </style>
+      </>
+      {head()}
+      {nav()} <div className="container pt-5 pb-5">{children}</div>
     </React.Fragment>
   );
 };
