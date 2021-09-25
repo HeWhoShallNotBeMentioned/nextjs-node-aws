@@ -1,5 +1,11 @@
 function HomePage() {
-    return <div>Welcome to Next.js</div>
+  return (
+    <div>
+      {' '}
+      <div>Welcome to Next.js</div>
+      <div>Now with prettier working</div>
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;
