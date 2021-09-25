@@ -1,11 +1,6 @@
-function HomePage() {
-  return (
-    <div>
-      {' '}
-      <div>Welcome to Next.js</div>
-      <div>Now with prettier working</div>
-    </div>
-  );
-}
+import React from 'react';
+import Layout from '../components/Layout';
 
-export default HomePage;
+const Home = () => <Layout>Welcome to Next.js</Layout>;
+
+export default Home;
