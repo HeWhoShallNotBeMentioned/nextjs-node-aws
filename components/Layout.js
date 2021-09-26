@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 // children = props.children
 const Layout = ({ children }) => {
@@ -17,19 +18,25 @@ const Layout = ({ children }) => {
     return (
       <ul className="nav nav-tabs" style={{ backgroundColor: 'orchid' }}>
         <li className="nav-item">
-          <a className="nav-link" style={{ color: '#011000' }} href="">
-            Home
-          </a>
+          <Link href="/">
+            <a className="nav-link" style={{ color: '#011000' }}>
+              Home
+            </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" style={{ color: '#011000' }} href="">
-            Login
-          </a>
+          <Link href="/login">
+            <a className="nav-link" style={{ color: '#011000' }}>
+              Login
+            </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" style={{ color: '#011000' }} href="">
-            Register
-          </a>
+          <Link href="/register">
+            <a className="nav-link" style={{ color: '#011000' }}>
+              Register
+            </a>
+          </Link>
         </li>
       </ul>
     );
