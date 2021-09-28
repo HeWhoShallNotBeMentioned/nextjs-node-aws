@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Router from 'next/router';
 import nProgress from 'nprogress';
+//import withCSS from '/static/css/styles.css';
 
 Router.onRouteChangeStart = (url) => {
-  console.log('start router');
   return nProgress.start();
 };
 Router.onRouteChangeComplete = (url) => {
@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.css"
         />
+        <link rel="stylesheet" href="\static\css\styles.css" />
       </React.Fragment>
     );
   };
@@ -62,15 +63,6 @@ const Layout = ({ children }) => {
   };
   return (
     <React.Fragment>
-      <>
-        <style type="text/css">
-          {`
-   .nav-link {
-       color: "pink";
-   }
-      `}
-        </style>
-      </>
       {head()}
       {nav()} <div className="container pt-5 pb-5">{children}</div>
     </React.Fragment>
