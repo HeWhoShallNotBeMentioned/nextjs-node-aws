@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
-//import MyApp from _app.js
 
 const Register = () => {
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    password: '',
+    error: '',
+    success: '',
+    buttonText: 'Register',
+  });
+
   const registerForm = () => {
     return (
       <form>
