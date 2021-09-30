@@ -11,11 +11,36 @@ const Register = () => {
     buttonText: 'Register',
   });
 
+  const handleChange = (labelName) => {
+    return (event) => {
+      console.log(
+        'labelName---  ',
+        labelName,
+        '  event outer---  ',
+        event.target.value
+      );
+      setState({
+        ...state,
+        [labelName]: event.target.value,
+        error: '',
+        sucess: '',
+        buttonText: 'Register',
+      });
+    };
+  };
+
+  const handleSubmit = (event) => {};
+
+  const { name, email, password, error, success, buttonText } = state;
+
   const registerForm = () => {
     return (
-      <form>
+      <form onSubmit={handleSubmit}>
+        {' '}
         <div className="form-group">
           <input
+            value={name}
+            onChange={handleChange('name')}
             type="text"
             className="form-control"
             placeholder="Type your name"
@@ -23,6 +48,8 @@ const Register = () => {
         </div>
         <div className="form-group">
           <input
+            value={email}
+            onChange={handleChange('email')}
             type="email"
             className="form-control"
             placeholder="Type your email"
@@ -30,13 +57,20 @@ const Register = () => {
         </div>
         <div className="form-group">
           <input
+            value={password}
+            onChange={handleChange('password')}
             type="password"
             className="form-control"
             placeholder="Type your password"
           />
         </div>
         <div className="form-group">
-          <button className="btn btn-outline-secondary">Register</button>
+          <button
+            //onClick={handleSubmit()}
+            className="btn btn-outline-secondary"
+          >
+            {buttonText}
+          </button>
         </div>
       </form>
     );
@@ -48,6 +82,8 @@ const Register = () => {
         <h1>Register</h1>
         <br />
         {registerForm()}
+        <hr />
+        {JSON.stringify(state)}
       </div>
     </Layout>
   );
