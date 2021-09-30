@@ -29,7 +29,10 @@ const Register = () => {
     };
   };
 
-  const handleSubmit = (event) => {};
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.table({ name, email, password });
+  };
 
   const { name, email, password, error, success, buttonText } = state;
 
