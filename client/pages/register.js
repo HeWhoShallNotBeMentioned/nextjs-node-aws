@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
+import axios from 'axios';
 
 const Register = () => {
   const [state, setState] = useState({
@@ -32,6 +33,10 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.table({ name, email, password });
+    axios
+      .post(`http://localhost:8000/api/register`, { name, email, password })
+      .then((response) => console.log('response from backend', response))
+      .catch((error) => console.log(error));
   };
 
   const { name, email, password, error, success, buttonText } = state;

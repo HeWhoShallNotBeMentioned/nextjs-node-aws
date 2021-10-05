@@ -1,5 +1,4 @@
 exports.register = (req, res) => {
-  res.json({
-    data: 'You hit register endpoint',
-  });
+  console.log('Register controller backend from front end route', req.body);
+  res.status(200).json({ message: 'Data successfully received' });
 };
